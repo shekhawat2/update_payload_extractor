@@ -535,9 +535,6 @@ class PayloadApplier(object):
     # Do we have a source partition?
     if old_part_file_name:
       # Verify the source partition.
-      with open(old_part_file_name, 'rb') as old_part_file:
-        _VerifySha256(old_part_file, old_part_info.hash,
-                      'old ' + part_name, length=old_part_info.size)
       new_part_file_mode = 'r+b'
       open(new_part_file_name, 'w').close()
 
